@@ -1,0 +1,59 @@
+1685992046235|5|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685992046251|6|statement|select count(c1_0.id) from client c1_0
+1685992046253|0|commit|
+1685994444052|7|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685994444067|6|statement|select count(c1_0.id) from client c1_0
+1685994444069|1|commit|
+1685995651506|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685995651520|4|statement|select count(c1_0.id) from client c1_0
+1685995651522|1|commit|
+1685996772311|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685996772325|3|statement|select count(c1_0.id) from client c1_0
+1685996772327|1|commit|
+1685997012748|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685997012762|4|statement|select count(c1_0.id) from client c1_0
+1685997012764|1|commit|
+1685997039620|7|statement|insert into client (registered_date,updated_date,email,login,name,password,permission,surname) values ('2023-06-05T23:30:39.605+0300','2023-06-05T23:30:39.605+0300','ffff@ukr.net','111111','333333','222222','BUYER','444444')
+1685997039641|9|commit|
+1685997039664|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685997039669|2|statement|select count(c1_0.id) from client c1_0
+1685997039672|2|commit|
+1685997343331|5|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685997343344|2|statement|select count(c1_0.id) from client c1_0
+1685997343347|2|commit|
+1685997372882|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685997372895|5|statement|select count(c1_0.id) from client c1_0
+1685997372897|0|commit|
+1685997387128|1|rollback|
+1685997650256|1|rollback|
+1685997882553|1|rollback|
+1685998630116|7|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685998630133|8|statement|select count(c1_0.id) from client c1_0
+1685998630135|1|commit|
+1685998928041|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685998928055|5|statement|select count(c1_0.id) from client c1_0
+1685998928059|2|commit|
+1685998962332|6|statement|insert into client (registered_date,updated_date,email,login,name,password,permission,surname) values ('2023-06-06T00:02:42.314+0300','2023-06-06T00:02:42.315+0300','dmnkcn@email.ua','ami.cv','dd;;fl;','dccvv','SELLER','kdncjn;an')
+1685998962353|10|commit|
+1685998962378|2|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685998962385|4|statement|select count(c1_0.id) from client c1_0
+1685998962387|1|commit|
+1685999391890|6|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1685999391907|8|statement|select count(c1_0.id) from client c1_0
+1685999391909|0|commit|
+1686001135808|5|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1686001135820|4|statement|select count(c1_0.id) from client c1_0
+1686001135823|1|commit|
+1686001483108|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1686001483122|4|statement|select count(c1_0.id) from client c1_0
+1686001483124|1|commit|
+1686001591952|23|statement|insert into client (registered_date,updated_date,email,login,name,password,permission,surname) values ('2023-06-06T00:46:31.915+0300','2023-06-06T00:46:31.915+0300','dddex@email.ua','dfsdddsd','fff','dddddf',NULL,'ksjdjjd')
+1686001591957|1|rollback|
+1686001637898|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1686001637913|5|statement|select count(c1_0.id) from client c1_0
+1686001637917|2|commit|
+1686001897028|13|statement|insert into client (registered_date,updated_date,email,login,name,password,permission,surname) values ('2023-06-06T00:51:36.996+0300','2023-06-06T00:51:36.997+0300','dffffdff@emal.com','ggggdfkndmfng','fffffff','fffffff',NULL,'fffffff')
+1686001897034|2|rollback|
+1686002015776|4|statement|select c1_0.id,c1_0.registered_date,c1_0.updated_date,c1_0.email,c1_0.login,c1_0.name,c1_0.password,c1_0.permission,c1_0.surname from client c1_0 limit 0,5
+1686002015789|4|statement|select count(c1_0.id) from client c1_0
+1686002015791|1|commit|

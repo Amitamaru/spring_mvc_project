@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Clients</title>
 </head>
 <body>
-Hello world
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Login</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Permission</th>
+        <th>last update date</th>
+        <th>Registered date</th>
+        <th>Modify client</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.getId()}"/>
+        <td th:text="${client.getLogin()}"/>
+        <td th:text="${client.getName()}"/>
+        <td th:text="${client.getSurname()}"/>
+        <td th:text="${client.getEmail()}"/>
+        <td th:text="${client.getPermission()}"/>
+        <td th:text="${client.getClientUpdated()}"/>
+        <td th:text="${client.getClientRegistered()}"/>
+        <th><button>Edit</button></th>
+        <th><button>Delete</button></th>
+
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<input type="button" value="Add"
+       onclick="window.location.href = 'addNewClient'"/>
 </body>
 </html>

@@ -23,15 +23,15 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotEmpty
     @Size(min = 5, max = 45, message = "login must be from 5 to 45 symbols")
     private String login;
 
-    @NotBlank
+    @NotEmpty
     @Size(min = 4, max = 100, message = "password must be from 5 to 100 symbols")
     private String password;
 
-    @NotBlank
+    @NotEmpty
     @Size(min = 3, max = 45, message = "name must be from 3 to 45 symbols")
     private String name;
 
@@ -43,7 +43,6 @@ public class Client {
     @Size(min = 4, max = 50, message = "email size from 4 to 50 symbols")
     private String email;
 
-    @NotEmpty(message = "must be not empty")
     @Enumerated(value = EnumType.STRING)
     private Permission permission;
 
