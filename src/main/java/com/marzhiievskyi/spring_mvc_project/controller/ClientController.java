@@ -1,6 +1,5 @@
 package com.marzhiievskyi.spring_mvc_project.controller;
 
-import com.marzhiievskyi.spring_mvc_project.dao.ClientDAO;
 import com.marzhiievskyi.spring_mvc_project.domain.Client;
 import com.marzhiievskyi.spring_mvc_project.domain.Permission;
 import com.marzhiievskyi.spring_mvc_project.service.ClientService;
@@ -17,12 +16,10 @@ import java.util.List;
 public class ClientController {
 
     private final ClientService clientService;
-    private final ClientDAO clientDAO;
 
-    public ClientController(ClientService clientService,
-                            ClientDAO clientDAO) {
+
+    public ClientController(ClientService clientService) {
         this.clientService = clientService;
-        this.clientDAO = clientDAO;
     }
 
     @GetMapping("/")
@@ -57,7 +54,7 @@ public class ClientController {
             return "clientInfo";
         }
         clientService.createOrUpdate(client);
-        return "redirect:/clients";
+        return "redirect:/";
 
     }
 }
