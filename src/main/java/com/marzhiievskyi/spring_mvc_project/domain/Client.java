@@ -1,10 +1,7 @@
 package com.marzhiievskyi.spring_mvc_project.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -45,6 +42,10 @@ public class Client {
     @NotEmpty(message = "must be not empty")
     @Size(min = 4, max = 50, message = "email size from 4 to 50 symbols")
     private String email;
+
+    @NotEmpty(message = "must be not empty")
+    @Enumerated(value = EnumType.STRING)
+    private Permission permission;
 
     @Column(name = "registered_date")
     @CreationTimestamp
