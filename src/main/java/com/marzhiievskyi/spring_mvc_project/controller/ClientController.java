@@ -55,6 +55,5 @@ public class ClientController {
         }
         clientService.createOrUpdate(client);
         return "redirect:/";
-
     }
 }
