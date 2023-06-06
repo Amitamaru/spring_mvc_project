@@ -47,10 +47,9 @@ public class ClientController {
 
     @PostMapping("/saveClient")
     public String createOrUpdate(@ModelAttribute("newClient") @Valid Client client,
-                                 BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            Permission[] permissions = Permission.values();
-            model.addAttribute("permissions", permissions);
+                                 BindingResult bindingResult, 
+                                 @ModelAttribute("permissions" Permission[] permissions) ) {
+        if (bindingResult.hasErrors()) { 
             return "clientInfo";
         }
         clientService.createOrUpdate(client);
