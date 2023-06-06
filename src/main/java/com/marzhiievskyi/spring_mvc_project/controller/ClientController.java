@@ -31,10 +31,13 @@ public class ClientController {
         return "clients";
     }
 
-    @PosttMapping("/{id}")
-    public void editClient(@PathVariable String id) {
-       
-
+    @GetMapping("/{id}")
+    public String editClient(@PathVariable String id, Model model) {
+            Optional<Client> clientToUpdate = clientService.getClient(id);
+            model.addAttribute("newClient", clientToUpdate);
+            Permission[] permissions = clientService.getClientPermissions();
+            model.addAttribute("permissions", permissions);
+            return "clientInfo";
     }
 
     @GetMapping("/addNewClient")
