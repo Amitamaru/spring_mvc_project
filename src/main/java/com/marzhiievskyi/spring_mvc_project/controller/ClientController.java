@@ -40,7 +40,7 @@ public class ClientController {
     public String createClient(Model model) {
         Client client = new Client();
         model.addAttribute("newClient", client);
-        Permission[] permissions = Permission.values();
+        Permission[] permissions = clientService.getClientPermissions();
         model.addAttribute("permissions", permissions);
         return "clientInfo";
     }
