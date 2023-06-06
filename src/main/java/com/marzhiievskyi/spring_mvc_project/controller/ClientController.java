@@ -31,39 +31,4 @@ public class ClientController {
         return "clients";
     }
 
-    @GetMapping("/{id}")
-    public String editClient(@PathVariable String id, Model model) {
-            Optional<Client> clientToUpdate = clientService.getClient(id);
-            model.addAttribute("newClient", clientToUpdate);
-            Permission[] permissions = clientService.getClientPermissions();
-            model.addAttribute("permissions", permissions);
-            return "clientInfo";
-    }
-
-    @GetMapping("/addNewClient")
-    public String createClient(Model model) {
-        Client client = new Client();
-        model.addAttribute("newClient", client);
-        Permission[] permissions = clientService.getClientPermissions();
-        model.addAttribute("permissions", permissions);
-        return "clientInfo";
-    }
-
-    @PostMapping("/saveClient")
-    public String saveClient(@ModelAttribute("newClient") @Valid Client client,
-                             BindingResult bindingResult, 
-                             @ModelAttribute("permissions" Permission[] permissions) ) {
-        if (bindingResult.hasErrors()) { 
-            return "clientInfo";
-        }
-        clientService.createOrUpdate(client);
-        return "redirect:/";
-    }
-    
-    @PostMapping("/delete/{id}")
-    public String saveClient(@PathVariable String id) ) {
-        Optional<Client> clientToDelete = clientService.getClient(id);
-        clientService.deleteClient(clientToDelete);
-        return "redirect:/";
-    }
 }

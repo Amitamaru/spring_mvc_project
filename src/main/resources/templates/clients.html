@@ -34,10 +34,10 @@
         <td th:text="${client.getClientUpdated()}"/>
         <td th:text="${client.getClientRegistered()}"/>
         <td>
-            <input type="button" value="Edit"
-                   onclick="window.location.href = '${client.getId()}'"/>
-            <input type="button" value="Delete"
-                   onclick="window.location.href = 'delete/${client.getId()}'"/>
+
+            <button>Edit</button>
+            <button>Delete</button>
+
         </td>
     </tr>
     </tbody>
@@ -46,8 +46,7 @@
      </div>      
 </table>
 
-<br>
-<input type="button" value="Add"
-       onclick="window.location.href = 'addNewClient'"/>
+
+
 </body>
 </html>
