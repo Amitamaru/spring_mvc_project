@@ -2,6 +2,7 @@ package com.marzhiievskyi.spring_mvc_project.service;
 
 import com.marzhiievskyi.spring_mvc_project.dao.ClientDAO;
 import com.marzhiievskyi.spring_mvc_project.domain.Client;
+import com.marzhiievskyi.spring_mvc_project.domain.Permission;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

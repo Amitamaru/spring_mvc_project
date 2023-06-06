@@ -12,7 +12,6 @@
 <table>
     <thead>
     <tr>
-        <th>ID</th>
         <th>Login</th>
         <th>Name</th>
         <th>Surname</th>
@@ -25,7 +24,6 @@
     </thead>
     <tbody>
     <tr th:each="client : ${clients}">
-        <td th:text="${client.getId()}"/>
         <td th:text="${client.getLogin()}"/>
         <td th:text="${client.getName()}"/>
         <td th:text="${client.getSurname()}"/>
@@ -34,19 +32,41 @@
         <td th:text="${client.getClientUpdated()}"/>
         <td th:text="${client.getClientRegistered()}"/>
         <td>
-
-            <button>Edit</button>
-            <button>Delete</button>
+            <button>
+                <a th:href="@{/edit(id=${client.getId()})}" style="text-decoration: none; color: inherit;">
+                    Edit
+                </a>
+            </button>
+            <button>
+                <a th:href="@{/delete(id=${client.getId()})}" style="text-decoration: none; color: inherit;">
+                    Delete
+                </a>
+            </button>
 
         </td>
     </tr>
     </tbody>
-    <div>  
-     
-     </div>      
+</table>
+<table>
+    <tbody>
+    <tr th:each="page : ${clients.getTotalPages()}">
+        <td>
+            <button>
+                <a th:href="@{/(page=${clients.getNumber()+1})}" style="text-decoration: none; color: inherit;">
+                    <p th:text="page + ${clients.getNumber()}"/>
+                </a>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+
 </table>
 
-
+<button>
+    <a th:href="@{/addNewClient}" style="text-decoration: none; color: inherit;">
+        Add new client
+    </a>
+</button>
 
 </body>
 </html>

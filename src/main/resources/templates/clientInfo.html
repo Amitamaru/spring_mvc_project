@@ -7,7 +7,14 @@
     <title>Info</title>
 </head>
 <body>
-<form method="post" th:object="${newClient}" th:action="@{/saveClient}" }>
+<form method="post" th:object="${newClient}" th:action="@{/saveClient}">
+
+    <label>
+        <input th:type="hidden" th:field="*{id}"/>
+    </label>
+    <label>
+        <input th:type="hidden" th:field="*{clientRegistered}"/>
+    </label>
     <label>
         Login <input th:type="text" th:field="*{login}">
         <div style="color: brown" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></div>
@@ -30,7 +37,7 @@
     </label>
     <label>
         Email <input th:type="text" th:field="*{email}">
-        <div style="color: brown"th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <div style="color: brown" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
         <br><br>
     </label>
 
@@ -41,7 +48,7 @@
                 th:text="${type}"></option>
     </select>
     </label><br><br>
-    <button>Ok</button>
+    <input type="submit" value="Save client"/>
 
 </form>
 

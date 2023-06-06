@@ -8,9 +8,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ClientController {
@@ -29,6 +31,43 @@ public class ClientController {
         Page<Client> pageClients = clientService.getPageClients(page, size);
         model.addAttribute("clients", pageClients);
         return "clients";
+    }
+
+    @ModelAttribute("permissions")
+    public Permission[] clientPermissions() {
+        return clientService.getClientPermissions();
+    }
+
+    @GetMapping("/addNewClient")
+    public String addNewClient(@ModelAttribute("newClient") Client client, Model model) {
+        model.addAttribute("newClient", client);
+        return "clientInfo";
+    }
+
+
+    @PostMapping("/saveClient")
+    public String createClient(@Valid @ModelAttribute("newClient") Client client, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "clientInfo";
+        }
+        clientService.createOrUpdate(client);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit")
+    public String editClient(@RequestParam("id") Long id, Model model) {
+        Optional<Client> client = clientService.getClient(id);
+        model.addAttribute("newClient" ,client);
+        return "clientInfo";
+    }
+
+
+
+    @GetMapping("/delete")
+    public String deleteClient(@RequestParam("id") Long id) {
+
+        clientService.deleteClient(id);
+        return "redirect:/";
     }
 
 }
