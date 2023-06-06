@@ -38,5 +38,9 @@ public class ClientService {
     public void deleteClient(Long id) {
         clientDAO.deleteById(id);
     }
+    
+    public Permission[] getClientPermissions() {
+        return Permission.values();
+    }
 
 }
