@@ -59,4 +59,11 @@ public class ClientController {
         clientService.createOrUpdate(client);
         return "redirect:/";
     }
+    
+    @PostMapping("/delete/{id}")
+    public String saveClient(@PathVariable String id) ) {
+        Optional<Client> clientToDelete = clientService.getClient(id);
+        clientService.deleteClient(clientToDelete);
+        return "redirect:/";
+    }
 }
