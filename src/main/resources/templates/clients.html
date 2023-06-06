@@ -33,8 +33,13 @@
         <td th:text="${client.getPermission()}"/>
         <td th:text="${client.getClientUpdated()}"/>
         <td th:text="${client.getClientRegistered()}"/>
-        <th><button>Edit</button></th>
-        <th><button>Delete</button></th>
+        <td>
+            <input type="button" value="Edit"
+                   onclick="window.location.href = '${client.getId()}'"/>
+            <input type="button" value="Delete"
+                   onclick="window.location.href = 'delete/${client.getId()}'"/>
+        </td>
+       
 
     </tr>
     </tbody>
