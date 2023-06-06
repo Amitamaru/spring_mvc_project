@@ -31,8 +31,9 @@ public class ClientController {
         return "clients";
     }
 
-    @PostMapping("/{id}")
+    @PosttMapping("/{id}")
     public void editClient(@PathVariable String id) {
+       
 
     }
 
@@ -46,9 +47,9 @@ public class ClientController {
     }
 
     @PostMapping("/saveClient")
-    public String createOrUpdate(@ModelAttribute("newClient") @Valid Client client,
-                                 BindingResult bindingResult, 
-                                 @ModelAttribute("permissions" Permission[] permissions) ) {
+    public String saveClient(@ModelAttribute("newClient") @Valid Client client,
+                             BindingResult bindingResult, 
+                             @ModelAttribute("permissions" Permission[] permissions) ) {
         if (bindingResult.hasErrors()) { 
             return "clientInfo";
         }
