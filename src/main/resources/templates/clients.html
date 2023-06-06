@@ -33,15 +33,15 @@
         <td th:text="${client.getPermission()}"/>
         <td th:text="${client.getClientUpdated()}"/>
         <td th:text="${client.getClientRegistered()}"/>
-        <th><button>Edit</button></th>
-        <th><button>Delete</button></th>
-
+        <td>
+            <button>Edit</button>
+            <button>Delete</button>
+        </td>
     </tr>
     </tbody>
 </table>
 
-<br>
-<input type="button" value="Add"
-       onclick="window.location.href = 'addNewClient'"/>
+
+
 </body>
 </html>

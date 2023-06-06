@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +22,10 @@ public class ClientService {
     public Page<Client> getPageClients(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return clientDAO.findAll(pageable);
+    }
+
+    public List<Client> getAllClientsList() {
+        return clientDAO.findAll();
     }
 
     public void createOrUpdate(Client client) {

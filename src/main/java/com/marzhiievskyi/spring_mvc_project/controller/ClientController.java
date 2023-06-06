@@ -31,29 +31,4 @@ public class ClientController {
         return "clients";
     }
 
-    @PostMapping("/{id}")
-    public void editClient(@PathVariable String id) {
-
-    }
-
-    @GetMapping("/addNewClient")
-    public String createClient(Model model) {
-        Client client = new Client();
-        model.addAttribute("newClient", client);
-        Permission[] permissions = Permission.values();
-        model.addAttribute("permissions", permissions);
-        return "clientInfo";
-    }
-
-    @PostMapping("/saveClient")
-    public String createOrUpdate(@ModelAttribute("newClient") @Valid Client client,
-                                 BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            Permission[] permissions = Permission.values();
-            model.addAttribute("permissions", permissions);
-            return "clientInfo";
-        }
-        clientService.createOrUpdate(client);
-        return "redirect:/";
-    }
 }
