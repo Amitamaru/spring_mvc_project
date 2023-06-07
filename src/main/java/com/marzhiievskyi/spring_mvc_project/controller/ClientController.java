@@ -30,6 +30,12 @@ public class ClientController {
                               @RequestParam(value = "size", required = false, defaultValue = "5") int size) {
         Page<Client> pageClients = clientService.getPageClients(page, size);
         model.addAttribute("clients", pageClients);
+        model.addAttribute("current_page", page);
+        int totalPages = pageClients.getTotalPages(); 
+        if (totalPages > 1) {
+            List<Integer> totalPagesList IntStream.rangeClosed(1, totalPages).boxed().collected(Collectors.toList());
+            model.addAttribute("total_pages", totalPagesList);
+        }
         return "clients";
     }
 
