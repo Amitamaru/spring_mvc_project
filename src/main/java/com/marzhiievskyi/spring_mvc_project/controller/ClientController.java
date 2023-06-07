@@ -66,11 +66,8 @@ public class ClientController {
         return "clientInfo";
     }
 
-
-
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     public String deleteClient(@RequestParam("id") Long id) {
-
         clientService.deleteClient(id);
         return "redirect:/";
     }
