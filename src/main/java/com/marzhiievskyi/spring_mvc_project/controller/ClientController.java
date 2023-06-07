@@ -8,17 +8,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 public class ClientController {
 
     private final ClientService clientService;
-
 
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
@@ -31,9 +31,9 @@ public class ClientController {
         Page<Client> pageClients = clientService.getPageClients(page, size);
         model.addAttribute("clients", pageClients);
         model.addAttribute("current_page", page);
-        int totalPages = pageClients.getTotalPages(); 
+        int totalPages = pageClients.getTotalPages();
         if (totalPages > 1) {
-            List<Integer> totalPagesList IntStream.rangeClosed(1, totalPages).boxed().collected(Collectors.toList());
+            List<Integer> totalPagesList = IntStream.rangeClosed(0, totalPages - 1).boxed().collect(Collectors.toList());
             model.addAttribute("total_pages", totalPagesList);
         }
         return "clients";
@@ -62,7 +62,7 @@ public class ClientController {
     @GetMapping("/edit")
     public String editClient(@RequestParam("id") Long id, Model model) {
         Optional<Client> client = clientService.getClient(id);
-        model.addAttribute("newClient" ,client);
+        model.addAttribute("newClient", client);
         return "clientInfo";
     }
 

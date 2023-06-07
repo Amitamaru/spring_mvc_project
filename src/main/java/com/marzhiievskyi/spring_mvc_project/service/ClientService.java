@@ -8,7 +8,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,10 +24,6 @@ public class ClientService {
         return clientDAO.findAll(pageable);
     }
 
-    public List<Client> getAllClientsList() {
-        return clientDAO.findAll();
-    }
-
     public void createOrUpdate(Client client) {
         clientDAO.save(client);
     }
@@ -37,14 +32,10 @@ public class ClientService {
         return clientDAO.findById(id);
     }
 
-    public void deleteClient(Client client) {
-        clientDAO.delete(client);
-    }
-
     public void deleteClient(Long id) {
         clientDAO.deleteById(id);
     }
-    
+
     public Permission[] getClientPermissions() {
         return Permission.values();
     }

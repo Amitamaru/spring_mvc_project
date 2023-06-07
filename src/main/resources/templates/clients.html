@@ -4,10 +4,11 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link th:href="@{/main_style.css}" rel="stylesheet">
     <title>Clients</title>
+
 </head>
 <body>
-
 
 <table>
     <thead>
@@ -19,7 +20,6 @@
         <th>Permission</th>
         <th>last update date</th>
         <th>Registered date</th>
-        <th>Modify client</th>
     </tr>
     </thead>
     <tbody>
@@ -37,20 +37,21 @@
                     Edit
                 </a>
             </button>
+        </td>
+        <td>
             <form method="post" th:action="@{/delete(id=${client.getId()})}">
-            <input type="submit" value="Delete"/>
+                <input type="submit" value="Delete"/>
             </form>
         </td>
     </tr>
     </tbody>
 </table>
-      <button th:each="pageNumber : ${total_pages}">
-            <a th:href="@{/(page=${pageNumber}, limit=7)}" th:text="${pageNumber}" th:classappend ="${pageNumber == current_page? 
-                                                                                                    'style="text-decoration: none; color: red;' : ''}"
-               style="text-decoration: none; color: inherit;">
-            </a>
-      </button>
-
+<button th:each="pageNumber : ${total_pages}" >
+    <a class="no_active_page" th:href="@{/(page=${pageNumber}, limit=7)}" th:text="${pageNumber} + 1"
+       th:classappend="${pageNumber == current_page? 'active_page' : ''}"></a>
+</button>
+<br>
+<br>
 <button>
     <a th:href="@{/addNewClient}" style="text-decoration: none; color: inherit;">
         Add new client

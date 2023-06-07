@@ -1,0 +1,22 @@
+.active_page {
+    text-decoration-color: red;
+    font-family: "Arial", serif;
+    font-size: large;
+}
+
+th, td {
+    font-size: large;
+    border: solid;
+    color: black;
+}
+.no_active_page {
+    text-decoration: none;
+    font-family: "Arial", serif;
+    color: inherit;
+}
+
+.msg_err {
+    color: brown;
+    font-family: "Arial", serif;
+    font-size: small;
+}
