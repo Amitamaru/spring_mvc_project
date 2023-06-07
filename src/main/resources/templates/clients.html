@@ -47,20 +47,12 @@
     </tr>
     </tbody>
 </table>
-<table>
-    <tbody>
-    <tr th:each="page : ${clients.getTotalPages()}">
-        <td>
-            <button>
-                <a th:href="@{/(page=${clients.getNumber()+1})}" style="text-decoration: none; color: inherit;">
-                    <p th:text="page + ${clients.getNumber()}"/>
-                </a>
-            </button>
-        </td>
-    </tr>
-    </tbody>
-
-</table>
+      <button th:each="pageNumber : ${total_pages}">
+            <a th:href="@{/(page=${pageNumber}, limit=7)}" th:text="${pageNumber}" th:classappend ="${pageNumber == current_page? 
+                                                                                                    'style="text-decoration: none; color: red;' : ''}
+               style="text-decoration: none; color: inherit;">
+            </a>
+      </button>
 
 <button>
     <a th:href="@{/addNewClient}" style="text-decoration: none; color: inherit;">
