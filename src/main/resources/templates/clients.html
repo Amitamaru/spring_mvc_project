@@ -37,12 +37,9 @@
                     Edit
                 </a>
             </button>
-            <button>
-                <a th:href="@{/delete(id=${client.getId()})}" style="text-decoration: none; color: inherit;">
-                    Delete
-                </a>
-            </button>
-
+            <form method="post" th:action="@{/delete(id=${client.getId()})}">
+            <input type="submit" value="Delete"/>
+            </form>
         </td>
     </tr>
     </tbody>
