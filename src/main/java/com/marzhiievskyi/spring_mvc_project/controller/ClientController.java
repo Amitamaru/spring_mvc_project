@@ -45,8 +45,8 @@ public class ClientController {
     }
 
     @GetMapping("/addNewClient")
-    public String addNewClient(Model model) {
-        model.addAttribute("newClient", new Client();
+    public String addNewClient(@ModelAttribute("newClient") Client client, Model model) {
+        model.addAttribute("newClient", client);
         return "clientInfo";
     }
 
