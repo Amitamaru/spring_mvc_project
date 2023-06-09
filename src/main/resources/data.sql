@@ -1,3 +1,4 @@
+# insert data clients
 INSERT INTO mvc_project_db.client (login, password, name, surname, email, permission, updated_date, registered_date)
 VALUES ('megan88', 'p@ssw0rd!', 'Megan', 'Davis', 'megan.davis@example.com', 'BUYER', DEFAULT, DEFAULT),
        ('alexander', 'securepass123', 'Alexander', 'Wilson', 'alexander.wilson@example.com', 'BUYER', DEFAULT, DEFAULT),
