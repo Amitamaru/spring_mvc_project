@@ -1,8 +1,7 @@
 # create database clients
 CREATE DATABASE IF NOT EXISTS `mvc_project_db` DEFAULT CHARACTER SET utf8mb4;
 USE `mvc_project_db`;
-DROP TABLE IF EXISTS `client`;
-create table client
+create table if not exists client
 (
     id              bigint auto_increment
         primary key,
