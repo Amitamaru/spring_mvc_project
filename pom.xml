@@ -11,7 +11,7 @@
     <groupId>com.marzhiievskyi</groupId>
     <artifactId>spring_mvc_project</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>spring_mvc_project</name>
     <description>spring_mvc_project</description>
     <properties>
